@@ -51,7 +51,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.github.mertkalecik'
-                artifactId = 'mk.unittest'
+                artifactId = 'UnitTestFramework'
                 version = '1.0.0'
             }
         }
