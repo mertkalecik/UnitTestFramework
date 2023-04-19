@@ -1,12 +1,9 @@
 package com.github.mertkalecik
 
 import io.mockk.MockKAnnotations
-import java.lang.reflect.Field
 import java.lang.reflect.Method
-import kotlin.reflect.KMutableProperty
 import kotlin.reflect.full.callSuspend
 import kotlin.reflect.full.memberFunctions
-import kotlin.reflect.full.memberProperties
 import kotlin.reflect.jvm.isAccessible
 import org.junit.Before
 import org.junit.Rule
@@ -25,6 +22,7 @@ abstract class BaseUnitTest {
     /**
      * [@Java] + [@Kotlin]
      * Updates Inaccessible Field with Using Reflection
+     * [Any] Stands for the target class (system under test) which includes private field.
      */
     fun Any.updateInaccessibleField(fieldName: String, value: Any) {
         try {
@@ -40,7 +38,7 @@ abstract class BaseUnitTest {
     /**
      * [@Java] + [@Kotlin]
      * Returns "Private" Field and also makes the field accessible for testing purpose.
-     * [Any] Stands for the target class which includes private field.
+     * [Any] Stands for the target class (system under test) which includes private field.
      */
     fun Any.getInaccessibleField(fieldName: String): Any? =
         try {
@@ -55,7 +53,7 @@ abstract class BaseUnitTest {
     /**
      * [@Java]
      * Returns "Private" Method and also makes the method accessible for testing purpose.
-     * [Any] Stands for the the target class which includes private method.
+     * [Any] Stands for the the target class (system under test) which includes private method.
      */
     fun Any.getInaccessibleMethod(methodName: String, vararg types: Class<*>): Method? =
         try {
@@ -68,7 +66,7 @@ abstract class BaseUnitTest {
     /**
      * [@Kotlin]
      * Invokes "Private" Suspend Method also makes the method accessible for testing purpose.
-     * [Any] Represents the target class which includes private suspend method.
+     * [Any] Stands the target class (system under test) which includes private suspend method.
      */
     suspend fun Any.invokeSuspendFunction(methodName: String, vararg args: Any?): Any? =
         this::class.memberFunctions.find { it.name == methodName }?.also {
@@ -79,7 +77,7 @@ abstract class BaseUnitTest {
     /**
      * [@Kotlin]
      * Invokes "Private" Method also makes the method accessible for testing purpose.
-     * [Any] Represents the target class which includes private method.
+     * [Any] Stands the target class (system under test) which includes private method.
      */
     fun Any.invokeFunction(methodName: String, vararg args: Any?): Any? =
         this::class.memberFunctions.find { it.name == methodName }?.also {
