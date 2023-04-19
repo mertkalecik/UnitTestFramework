@@ -9,9 +9,9 @@ class MainViewModel : ViewModel() {
 
     private var isSessionExpired = false
 
-    suspend fun isSessionExpired(): Boolean {
+    private suspend fun isSessionExpired2(): Boolean {
         withContext(Dispatchers.IO) {
-            delay(3_000) // network simulation
+            delay(1_000) // network simulation
             isSessionExpired = true
         }
 

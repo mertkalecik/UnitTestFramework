@@ -1,6 +1,8 @@
 package com.github.mertkalecik
 
 import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runTest
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -12,7 +14,7 @@ import org.junit.Assert.*
  */
 class MainViewModelUnitTest : BaseUnitTest() {
 
-    private val viewModel: MainViewModel = mockk()
+    private val viewModel: MainViewModel = mockk(relaxed = true)
 
     @Test
     fun `verify the private variable value change`() {
@@ -25,5 +27,18 @@ class MainViewModelUnitTest : BaseUnitTest() {
         // Then
         val output = viewModel.getInaccessibleField(fieldName = "isSessionExpired")
         assertEquals(expected, output)
+    }
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    @Test
+    fun `verify suspend function called`() = runTest {
+        // Given
+        val expected = false
+
+        // When
+        val out = viewModel.invokeSuspendFunction(methodName = "isSessionExpired2")
+
+        // Then
+        assertEquals(expected, out)
     }
 }

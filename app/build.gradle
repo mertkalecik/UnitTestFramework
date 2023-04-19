@@ -68,4 +68,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     testImplementation project(":mk:unittest")
     testImplementation "io.mockk:mockk:1.13.5"
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
 }
