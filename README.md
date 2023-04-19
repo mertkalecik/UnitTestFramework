@@ -39,6 +39,9 @@ For these reasons, the @VisibleForTesting annotation should be used carefully, a
 
 <img width="1716" alt="Screenshot 2023-04-20 at 00 55 39" src="https://user-images.githubusercontent.com/38656031/233208676-c0cebc8f-a22a-41e1-93ef-2350ae627dd8.png">
 
+**Invocation of a suspend function from the System Under Test**
+
+
 ## Version History
 
 * v1.0.0
@@ -52,5 +55,12 @@ allprojects {
 		...
 		maven { url 'https://jitpack.io' }
 	}
+}
+```
+## Add the dependency for UnitTestFramework
+
+```
+dependencies {
+	testImplementation 'com.github.mertkalecik:UnitTestFramework:1.0.0'
 }
 ```
