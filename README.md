@@ -40,6 +40,22 @@ For these reasons, the @VisibleForTesting annotation should be used carefully, a
 <img width="1716" alt="Screenshot 2023-04-20 at 00 55 39" src="https://user-images.githubusercontent.com/38656031/233208676-c0cebc8f-a22a-41e1-93ef-2350ae627dd8.png">
 
 **Invocation of a suspend function from the System Under Test**
+## ViewModel:
+
+<img width="548" alt="Screenshot 2023-04-20 at 03 06 59" src="https://user-images.githubusercontent.com/38656031/233224969-8670e622-4298-47bd-9c2e-7dacd8fb3cab.png">
+
+## Function Invocation with Unit Test Framework:
+
+<img width="754" alt="Screenshot 2023-04-20 at 03 06 03" src="https://user-images.githubusercontent.com/38656031/233224877-0bed5186-f537-48db-ac3e-7c116301917f.png">
+
+## Usage:
+
+<img width="754" alt="Screenshot 2023-04-20 at 03 07 54" src="https://user-images.githubusercontent.com/38656031/233225093-376c55c5-d1f1-4cd6-a8de-30daf4d4c0e1.png">
+
+
+## Result:
+
+<img width="1290" alt="Screenshot 2023-04-20 at 03 09 14" src="https://user-images.githubusercontent.com/38656031/233225218-75ce11f4-f94d-4753-8bec-441ca4a5cbf7.png">
 
 
 ## Version History
